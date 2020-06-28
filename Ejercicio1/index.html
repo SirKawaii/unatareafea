@@ -3,22 +3,27 @@
     <head>
         <script type="text/javascript">
             function send(){
+                
                 let text = document.getElementById("texto").value;
+                let result = document.getElementById('result');
                 let alertUrl = "alert.html?msg="+text;
 
                 let width = window.width / 2;
                 let height = window.height / 2;
-
-                window.open(alertUrl, "_blank ", "width="+width+",height="+height);
-
+                newWindow = window.open(alertUrl, "_blank ", "width="+width+",height="+height);
+                result.innerHTML = "<p>El texto que se envió es:</p><br><p>" + text+ "</p>";
+                result.setAttribute("style", "border-style: solid;border-width: 1px; border-color: red;")
             }
 
         </script>
     </head>
     <body>
         <textarea name="texto" id="texto" cols="30" rows="10">
-
         </textarea>
         <button onclick="send()">Enviar</button>
+        <br>
+        <br>
+        <br>
+        <div id="result"></div>
     </body>
 </html>
