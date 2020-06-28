@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function send(){
+                let text = document.getElementById("texto").value;
+                let alertUrl = "alert.html?msg="+text;
+
+                let width = window.width / 2;
+                let height = window.height / 2;
+
+                window.open(alertUrl, "_blank ", "width="+width+",height="+height);
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <textarea name="texto" id="texto" cols="30" rows="10">
+
+        </textarea>
+        <button onclick="send()">Enviar</button>
+    </body>
+</html>

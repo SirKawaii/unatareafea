@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        let limit = 15;
+
+        let timer = setInterval(() => {
+                    limit = limit -1;
+                    let destruction = document.getElementById('destruction');
+                    destruction.innerHTML = "<p> this window will be close in " + limit +" seconds.</p>";
+                    if(limit < 0){
+                        clearInterval(timer);
+                        window.close();
+                    }
+                }, 1000);
+
+        window.onload = () =>{
+            let texto = document.getElementById('texto');
+
+            let urlParams = new URLSearchParams(window.location.search);
+            let msg = urlParams.get('msg');
+            timer;
+            texto.innerHTML = "<p>" + msg +"</p>";
+        };
+    </script>
+</head>
+<body>
+    <div>ALERTA</div>
+    <div id=texto></div>
+    <div id=destruction></div>
+</body>
+</html>
