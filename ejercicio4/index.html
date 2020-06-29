@@ -1,11 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
     
-</body>
+    <header>
+        <div class="jumbotron">
+            <h1 class="display-4">Class loader</h1>
+            <p class="lead">Click on the button to load the students.</p>
+            <hr class="my-4">
+            <p>click with confidence 😁</p>
+            <a id="leButton" class="btn btn-primary btn-lg" href="#" role="button">Load students</a>
+          </div>
+    </header>
+    <section>
+        <div id="cards" class="card-columns">
+            
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+
+        $("#leButton").click(function(){
+            $.ajax({url: "https://my-json-server.typicode.com/pochitax/ldp3101/alumnos", success: function(result){
+                $("#div1").html(result);
+                console.log(result);
+                result.forEach(alumno => {
+                    $("#cards").append(generateCard(alumno));
+                });
+
+            }});
+        });
+
+        function generateCard(alumno){
+            let card = `
+                <div class="card">
+                    <img src="${alumno.avatar}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${alumno.nombre}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            <br>
+                            <p>${alumno.email}</p>
+                            <p>rut: ${alumno.rut}</p>
+                        </h6>
+                        <p class="card-text">${alumno.descripcion}</p>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+        
+    </script>
+  </body>
 </html>
