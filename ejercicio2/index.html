@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>The magic button</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="jumbotron">
+            <h1 class="display-4">Multiple boostrap examples</h1>
+            <p class="lead">Click on the button to load the students.</p>
+            <a id="button" class="btn btn-primary btn-lg" href="#" role="button">do things</a>
+        </div>
+    </header>
+    <section>
+        <h1>título</h1>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 3</li>
+            <li>Item 2</li>
+        </ul>
+        <p>párrafo</p>
+    </section>
+
+    <div id=trash style="border-style: solid;border-width: 1px; border-color: red;">
+        <p>basura:</p>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script>
+        $("#button").click(function () {
+            // send parrafo to the trash
+            $("section p").appendTo("#trash");
+            // sort elements
+            let items = $("section ul").children("li").get();
+            items.sort(function(a, b){
+                let item1 = $(a).text();
+                let item2 = $(b).text();
+                return item1 < item2 ? -1 : (item1 > item2)? 1 : 0;
+            });
+
+            let ul = $("section ul");
+            $.each(items, function(indice, el){
+                console.log(el);
+                $(ul).append(el);
+            });
+
+            //Pintar el título de color azul y mayúsculas.
+            let titulo = $("section h1");
+            $(titulo).css("color", "blue");
+            $(titulo).text($(titulo).text().toUpperCase());
+
+            //Darle estilo al section: Convertirlo en un cuadrado 
+            //de 300x300 píxeles de fondo amarillo y borde negro.
+            let section = $("section");
+            $(section).css(
+                {
+                    "width": "300px",
+                    "height": "300px",
+                    "background-color":"yellow",
+                    "border": "6px solid black",
+                }
+            );
+            // Centrar el section de forma horizontal y vertical con css.
+            $(section).center();
+        });
+
+        jQuery.fn.center = function () {
+            this.css("position", "absolute");
+            this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+                $(window).scrollTop()) + "px");
+            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                $(window).scrollLeft()) + "px");
+            return this;
+        }
+    </script>
+</body>
+
+</html>
