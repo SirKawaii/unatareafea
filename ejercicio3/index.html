@@ -1,77 +1,211 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>The formulario</title>
-  </head>
-  <body>
-    
-    <header>
-        <div class="jumbotron">
-            <h1 class="display-4">Multiple boostrap examples</h1>
-            <p class="lead">Click on the button to load the students.</p>
-          </div>
-    </header>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>The formulario</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="jumbotron">
+      <h1 class="display-4">Multiple boostrap examples</h1>
+      <p class="lead">Click on the button to load the students.</p>
+    </div>
+  </header>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="text">text</label>
+        <input id="inputtext" type="email" class="form-control" id="text" placeholder="Enter some text">
+      </div>
+      <div class="form-group">
+        <label for="filecontrol">Example file input</label>
+        <input type="file" class="form-control-file" id="filecontrol">
+      </div>
+    </form>
+
+    <button id="modalButton" class="btn btn-primary">modal</button>
+    <button id="alertButton" class="btn btn-primary">alerta</button>
+    <button id="popoverButton" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
+      data-placement="bottom" data-content="Estoy listo para recibir datos de el input texto.">Popover</button>
+    <button id="cardButton" class="btn btn-primary">card</button>
+    <button id="sliderButton" class="btn btn-primary">carrusel</button>
+    <br>
     <section>
-        <div class="container">
-            <form>
-                <div class="form-group">
-                  <label for="text">text</label>
-                  <input type="email" class="form-control" id="text" placeholder="Enter some text">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="filecontrol">Example file input</label>
-                    <input type="file" class="form-control-file" id="filecontrol">
-                </div>
-              </form>
-
-              <button class="btn btn-primary">modal</button>
-              <button class="btn btn-primary">alerta</button>
-              <button class="btn btn-primary">popover</button>
-              <button class="btn btn-primary">card</button>
-              <button class="btn btn-primary">carrusel</button>
-              
-              <img id="blah" src="#" alt="your image" />
+      <div id=card class="card" style="width: 18rem; display: none;" >
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.
+          </p>
+          <a id="closeCard" href="#" class="btn btn-primary">Close</a>
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="c-image d-block w-100" src="..." alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="c-text">...</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="c-image d-block w-100" src="..." alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="c-text">...</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="c-image d-block w-100" src="..." alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="c-text">...</p>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     </section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script>
+  <div id="myModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="modalText">Modal body text goes here.</p>
+          <img id="modalImage" class="img-responsive" src="" alt="" width="460" height="345">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        $("#filecontrol").change(function () {
-            readURL(this);
-        });
 
-        $("#button").click(function(){
 
-        });
 
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script>
 
-                reader.onload = function (e) {
-                    $('#blah').attr('src', e.target.result);
-                }
+    var imagen = null;
+    var texto = null;
 
-                reader.readAsDataURL(input.files[0]); // convert to base64 string
-            }
+    $(document).ready(function () {
+      $("#card").hide();
+      $('[data-toggle="popover"]').popover();
+    });
+
+    $('#inputtext').change(function () {
+      texto = document.getElementById('inputtext').value;
+      $('#popoverButton').attr('data-content', texto);
+    });
+
+    $("#filecontrol").change(function () {
+      readURL(this);
+    });
+    function checkData() {
+      if (texto !== null && imagen !== null) {
+        return true;
+      }
+      else {
+        alert("Recuerda ingresar una imagen y un texto. 😅");
+        return false;
+      }
+    }
+
+    function readURL(input, id) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          imagen = e.target.result;
         }
-        
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+      }
+    }
 
+    // modal
 
+    $('#modalButton').click(() => {
+      if (checkData()) {
+        $('#modalText').text(texto);
+        $('#modalImage').attr('src', imagen);
+        $('#myModal').modal('toggle');
+      }
+    });
 
-    </script>
-  </body>
+    //alert
+    $('#alertButton').click(() => {
+      if (texto !== null) {
+        alert(texto);
+      } else {
+        alert("recuerda agregar un texto");
+      }
+    });
+
+    $('#cardButton').click(() => {
+      if(checkData()){
+        $('#card  .card-img-top').attr('src', imagen);
+        $('#card  .card-body .card-text').text(texto);
+        $("#card").show();
+      }
+    });
+
+    $('#closeCard').click(() =>{
+      $("#card").hide();
+    });
+
+    // carrousel
+    $('#sliderButton').click(() => {
+      let selector = ".c-image"
+      $('.c-image').attr('src', imagen);
+      $('.c-text').attr('alt', texto);
+      $('.c-text').text(texto);
+      $("#myCarousel").show();
+    });
+
+  </script>
+</body>
+
 </html>
